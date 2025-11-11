@@ -1,101 +1,86 @@
-Django ORM Standalone
-=====================
+# Assignment 3 - Django & Energy Usage Application
+**Group 23 - CRN 43510**
 
-![Django](https://img.shields.io/badge/Django_ORM-Standalone-blue)
-![Python](https://img.shields.io/badge/Python-yellow)
+## Overview 
+This project uses the Django ORM framework to build a simple **Cash Register / Product Lookup System**. It stores product information (UPC, name, price) and allows the user to retrieve product details either:
 
-Use the database components of Django without having to use the rest of Django (i.e. running a web server)! :tada: A typical use case for using this template would be if you are writing a python script and you would like the database functionality provided by Django, but have no need for the request/response functionalty of a client/server web application that Django also provides. 
+- Through a web interface
+- Or directly via a console (terminal) script
 
-With this project template you can write regular python scripts and use Django's excellent ORM functionality with the database backend of your choice. This makes it convienient for Djangonauts to write database driven python applications with the familiar and well polished Django ORM. Enjoy.
+The project also includes access to Django's built-in **Admin Dashboard** for managing product records. SQLite is used as the backend database.
 
-:gear: Requirements
--------------------
-- Last tested successfully with Python 3.10.4 and Django 5.0.6
-- Create venv and pip install django to import the required modules.
 
-:open_file_folder: File Structure
----------------------------------
+---
+
+## Key Features
+
+- **Django ORM** for database modeling and query operations.
+- **User Input UI** for entering/scanning UPCs and displaying product details.
+- **Fixture Support** using a `product.json` to quickly load product data.
+- **Django Admin Panel** for editing and managing stored product entries.
+- **Two ways to run** the application: Web mode or Console mode.
+
+--- 
+
+## Project Structure
+assignment-3-django-and-energy-group-23-crn-43510/
+## Project Structure
+
 ```
-django-orm/
+assignment-3-django-and-energy-group-23-crn-43510/
 ├── db/
-│   ├── __init__.py
-│   └── models.py
-├── main.py
-├── manage.py
-├── README.md
-└── settings.py
+│   ├── models.py              # Defines Product model (UPC, name, price)
+│   └── fixtures/
+│       └── products.json      # Preloaded products
+├── main.py                    # Console-based product lookup script
+├── manage.py                  # Django management tool
+├── settings.py                # Django configuration (apps, DB, templates)
+├── urls.py                    # URL routing file
+└── README.md
 ```
 
-__The main.py file is the entry point for the project, and where you start your code. You automatically get access to your models via ```from db.models import *```
-Think of it like a plain old python file, but now with the addition of Django's feature-rich models.__ :smiling_face_with_three_hearts:
+---
 
-__The db/models.py is where you configure your typical Django models.__ There is a toy user model included as a simple example. After running the migrations command in the quick setup below, a db.sqlite3 file will be generated. The settings.py file is where can swap out the sqlite3 database for another database connection, such as Postgres or AmazonRDS, if you wish. For most applications, sqlite3 will be powerful enough. But if you need to swap databases down the road, you can easily do so, which is one of the benefits of using the Django ORM. 
+## Running the Application (Windows)
+1. Clone the repository:
+   git clone https://github.com/OTUSOFE365025/assignment-3-django-and-energy-group-23-crn-43510.git
 
-:rocket: Quick Setup
---------------------
-Create a folder for your project on your local machine
-```
-mkdir myproject; cd myproject
-```
-Create a virtual environment and install django
-```
-python -m venv venv; source venv/bin/activate; pip install django
-```
-Download this project template from GitHub
-```
-git clone git@github.com:dancaron/Django-ORM.git; cd Django-ORM
-```
-Initialize the database
-```
-python manage.py makemigrations db; python manage.py migrate
-```
-Run the project
-```
-python main.py
-```
+2. Create and activate a virtual environment:
+   python -m venv venv
+   venv\Scripts\activate
 
-Feel free to send pull requests if you want to improve this project.
+3. Install requirements:
+   pip install django
 
-:crystal_ball: Example
-----------------------
-After running Quick Start above: 
+4. Run migrations to create database tables:
+   python manage.py makemigrations
+   python manage.py migrate
 
-Code in db/models.py:
-```
-# Sample User model
-class User(models.Model):
-    name = models.CharField(max_length=50, default='Dan')
+5. Run the application:
+   python main.py
 
-    def __str__(self):
-        return self.name
-```
-Code in main.py:
-```
-# Seed a few users in the database
-User.objects.create(name='Dan')
-User.objects.create(name='Robert')
+6. Follow the prompts to enter a UPC code or type exit to quit.
 
-for u in User.objects.all():
-    print(f'ID: {u.id} \tUsername: {u.name}')
-```
-Output from command: ```python main.py```
-```
-ID: 1	Username: Dan
-ID: 2	Username: Robert
-```
 
-:mortar_board: Django Models
-----------------------------
+## Cash Register Application - Sample Console Output
+Below is an example of the application running in Cash Register Scan Mode, showing system users, loaded products, and UPC lookup in action:
+Users in Systems:
+| ID  |  User  |
+|-----|--------|
+|  1  |  Dan   |
+|  2  | Robert |
 
-Link: [How to Use Django Models](https://docs.djangoproject.com/en/3.1/topics/db/models/)
+Products Loaded:
+| UPC | Item  | Price |
+|-----|-------|-------|
+| 111 | Apple | $0.99 |
+| 222 | Milk  | $3.49 |
+| 333 | Bread | $2.25 |
 
-License
--------
+--- Cash Register Scan Mode ---
+Enter UPC code (or 'exit'): 111
+Item Found: Apple - $0.99
+Enter UPC code (or 'exit'):
 
-The MIT License (MIT) Copyright (c) 2024 Dan Caron
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+Link to screenshot
+https://github.com/OTUSOFE365025/assignment-3-django-and-energy-group-23/blob/master/screenshot.PNG
