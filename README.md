@@ -21,3 +21,42 @@ The project also includes access to Django's built-in **Admin Dashboard** for ma
 - **Two ways to run** the application: Web mode or Console mode.
 
 --- 
+
+## Project Structure
+assignment-3-django-and-energy-group-23-crn-43510/
+│
+├── db/
+│ ├── models.py # Defines Product model (UPC, name, price)
+│ └── fixtures/products.json
+│
+
+│
+├── main.py # Console-based product lookup script
+├── manage.py # Django management tool
+├── settings.py # Django configuration (apps, DB, templates)
+├── urls.py # URL routing file
+└── README.md
+
+---
+
+## Running the Application (Windows)
+1. Clone the repository:
+   git clone https://github.com/OTUSOFE365025/assignment-3-django-and-energy-group-23-crn-43510.git
+
+2. Create and activate a virtual environment:
+   python -m venv venv
+   venv\Scripts\activate
+
+3. Install requirements:
+   pip install django
+
+4. Run migrations to create database tables:
+   python manage.py makemigrations
+   python manage.py migrate
+
+5. Run the application:
+   python main.py
+
+6. Follow the prompts to enter a UPC code or type exit to quit.
+
+
