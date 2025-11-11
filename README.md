@@ -82,4 +82,5 @@ Enter UPC code (or 'exit'): 111
 Item Found: Apple - $0.99
 Enter UPC code (or 'exit'):
 
-
+Link to screenshot
+https://github.com/OTUSOFE365025/assignment-3-django-and-energy-group-23/blob/master/screenshot.PNG
