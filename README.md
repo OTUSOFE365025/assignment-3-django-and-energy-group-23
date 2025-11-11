@@ -24,13 +24,10 @@ The project also includes access to Django's built-in **Admin Dashboard** for ma
 
 ## Project Structure
 assignment-3-django-and-energy-group-23-crn-43510/
-│
 ├── db/
 │ ├── models.py # Defines Product model (UPC, name, price)
-│ └── fixtures/products.json
-│
-
-│
+│ └── fixtures/
+│ └── products.json # Preloaded products
 ├── main.py # Console-based product lookup script
 ├── manage.py # Django management tool
 ├── settings.py # Django configuration (apps, DB, templates)
@@ -63,8 +60,10 @@ assignment-3-django-and-energy-group-23-crn-43510/
 ## Cash Register Application - Sample Console Output
 Below is an example of the application running in Cash Register Scan Mode, showing system users, loaded products, and UPC lookup in action:
 Users in Systems:
-1 - Dan
-2 - Robert
+| ID  |  User  |
+|-----|--------|
+|  1  |  Dan   |
+|  2  | Robert |
 
 Products Loaded:
 | UPC | Item  | Price |
