@@ -60,3 +60,20 @@ assignment-3-django-and-energy-group-23-crn-43510/
 6. Follow the prompts to enter a UPC code or type exit to quit.
 
 
+## Cash Register Application - Sample Console Output
+Below is an example of the application running in Cash Register Scan Mode, showing system users, loaded products, and UPC lookup in action:
+Users in Systems:
+1 - Dan
+2 - Robert
+
+Products Loaded:
+111 - Apple - $0.99
+222 - Milk  - $3.49
+333 - Bread - $2.25
+
+--- Cash Register Scan Mode ---
+Enter UPC code (or 'exit'): 111
+Item Found: Apple - $0.99
+Enter UPC code (or 'exit'):
+
+
