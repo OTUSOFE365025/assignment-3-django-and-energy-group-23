@@ -24,15 +24,20 @@ The project also includes access to Django's built-in **Admin Dashboard** for ma
 
 ## Project Structure
 assignment-3-django-and-energy-group-23-crn-43510/
+## Project Structure
+
+```
+assignment-3-django-and-energy-group-23-crn-43510/
 ├── db/
-│ ├── models.py # Defines Product model (UPC, name, price)
-│ └── fixtures/
-│ └── products.json # Preloaded products
-├── main.py # Console-based product lookup script
-├── manage.py # Django management tool
-├── settings.py # Django configuration (apps, DB, templates)
-├── urls.py # URL routing file
+│   ├── models.py              # Defines Product model (UPC, name, price)
+│   └── fixtures/
+│       └── products.json      # Preloaded products
+├── main.py                    # Console-based product lookup script
+├── manage.py                  # Django management tool
+├── settings.py                # Django configuration (apps, DB, templates)
+├── urls.py                    # URL routing file
 └── README.md
+```
 
 ---
 
