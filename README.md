@@ -67,11 +67,11 @@ Users in Systems:
 2 - Robert
 
 Products Loaded:
-UPC  Item  Price
----  ------ -----
-111  Apple  $0.99
-222  Milk   $3.49
-333  Bread  $2.25
+| UPC | Item  | Price |
+|-----|-------|-------|
+| 111 | Apple | $0.99 |
+| 222 | Milk  | $3.49 |
+| 333 | Bread | $2.25 |
 
 --- Cash Register Scan Mode ---
 Enter UPC code (or 'exit'): 111
